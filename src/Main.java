@@ -5,17 +5,28 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Pattern pattern = Pattern.compile("[\\S]");
+        Pattern pattern = Pattern.compile("Java (?! 7|8)");
+        Matcher matcher1 = pattern.matcher("Java 7 Java 8");
+        Matcher matcher2 = pattern.matcher("Java 9");
 
-        Matcher matcher1 = pattern.matcher("a b c d e f g h");
-        System.out.println(matcher1.find());
+        if(!matcher1.find()) System.out.println("Coincidence not found");
 
-        Matcher matcher2 = pattern.matcher("f g h a b c");
-        System.out.println(matcher2.find());
+        while (matcher2.find()) {
+            System.out.println(matcher2.group());
+        }
 
-        Matcher matcher3 = pattern.matcher("123");
-        System.out.println(matcher3.find());
-
+//
+//        Pattern pattern = Pattern.compile("[\\S]");
+//
+//        Matcher matcher1 = pattern.matcher("a b c d e f g h");
+//        System.out.println(matcher1.find());
+//
+//        Matcher matcher2 = pattern.matcher("f g h a b c");
+//        System.out.println(matcher2.find());
+//
+//        Matcher matcher3 = pattern.matcher("123");
+//        System.out.println(matcher3.find());
+//
 //        Pattern pattern1 = Pattern.compile("[a-z]+");
 //
 //        Matcher matcher1 = pattern1.matcher("a b c d 1 2 3 4");
