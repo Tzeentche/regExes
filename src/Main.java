@@ -5,16 +5,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Pattern pattern = Pattern.compile("Java (?! 7|8)");
-        Matcher matcher1 = pattern.matcher("Java 7 Java 8");
-        Matcher matcher2 = pattern.matcher("Java 9");
+//        Pattern pattern = Pattern.compile();
+//
+//        Matcher matcher = pattern.matcher();
 
-        if(!matcher1.find()) System.out.println("Coincidence not found");
+        System.out.println(Pattern.compile("20+").matcher("20").find());
 
-        while (matcher2.find()) {
-            System.out.println(matcher2.group());
-        }
-
+//        Pattern pattern = Pattern.compile("Java (?! 7|8)");
+//        Matcher matcher1 = pattern.matcher("Java 7 Java 8");
+//        Matcher matcher2 = pattern.matcher("Java 9");
+//
+//        if(!matcher1.find()) System.out.println("Coincidence not found");
+//
+//        while (matcher2.find()) {
+//            System.out.println(matcher2.group());
+//        }
+//
 //
 //        Pattern pattern = Pattern.compile("[\\S]");
 //
