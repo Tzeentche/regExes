@@ -1,3 +1,5 @@
+import javafx.css.Match;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -5,20 +7,39 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        POSIX
+//        CREDIT CARD
 
-        int counter = 0;
-        String phoneNumber = "+375292690158";
-        Pattern pattern = Pattern.compile("^((\\+?380)([0-9][9]))$");
-        Matcher matcher = pattern.matcher(phoneNumber);
+        String cardNumber = "2234567890123456";
+        String date = "03/12";
+        String CVV = "123";
 
-       if (matcher.matches()) {
-            System.out.println("Phone number '" + phoneNumber + "' is correct");
+        Pattern cardNumberPattern = Pattern.compile("([2-6]([0-9](3)) ?)(([0-9](4) ?)(3))");
+        Pattern dataPattern = Pattern.compile("(0[1-9]|1[0-2])/([0-9](2))");
+        Pattern CVVPattern = Pattern.compile("[0-9](3)");
 
-       } else {
-           System.out.println("Phone number '" + phoneNumber + "' is incorrect");
-       }
-       
+        Matcher cardNumberMatcher = cardNumberPattern.matcher(cardNumber);
+        Matcher dataMatcher = dataPattern.matcher(date);
+        Matcher CVVMatcher = CVVPattern.matcher(CVV);
+
+        if(cardNumberMatcher.matches() && dataMatcher.matches() && CVVMatcher.matches()) {
+            System.out.println("Card data is correct");
+        } else {
+            System.out.println("Card data is incorrect");
+        }
+//        PHONE
+
+//        int counter = 0;
+//        String phoneNumber = "+375292690158";
+//        Pattern pattern = Pattern.compile("^((\\+?380)([0-9][9]))$");
+//        Matcher matcher = pattern.matcher(phoneNumber);
+//
+//       if (matcher.matches()) {
+//            System.out.println("Phone number '" + phoneNumber + "' is correct");
+//
+//       } else {
+//           System.out.println("Phone number '" + phoneNumber + "' is incorrect");
+//       }
+
 //        SVERHZHADNAYA
 
 //        int counter = 0;
