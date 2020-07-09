@@ -5,11 +5,26 @@ public class Main {
 
     public static void main(String[] args) {
 
+        int counter = 0;
+        String string = "196.198.1.197";
+        Pattern pattern = Pattern.compile(".*?19");
+        Matcher matcher = pattern.matcher(string);
+
+        while (matcher.find()) {
+            counter++;
+            System.out.println("Matcher found '" +
+                    string.substring(matcher.start(), matcher.end()) +
+                    "'. Starting at index " + matcher.start() +
+                    " and ending at index " + matcher.end());
+        }
+
+        System.out.println("Matcher found:" + counter);
+
 //        Pattern pattern = Pattern.compile();
 //
 //        Matcher matcher = pattern.matcher();
 
-        System.out.println(Pattern.compile("20+").matcher("20").find());
+//        System.out.println(Pattern.compile("20+").matcher("20").find());
 
 //        Pattern pattern = Pattern.compile("Java (?! 7|8)");
 //        Matcher matcher1 = pattern.matcher("Java 7 Java 8");
