@@ -8,21 +8,17 @@ public class Main {
 //        POSIX
 
         int counter = 0;
-        String string = "abcd1234";
+        String phoneNumber = "+375292690158";
+        Pattern pattern = Pattern.compile("^((\\+?380)([0-9][9]))$");
+        Matcher matcher = pattern.matcher(phoneNumber);
 
-        Pattern pattern = Pattern.compile("\\p{Punct}");
-        Matcher matcher = pattern.matcher(string);
+       if (matcher.matches()) {
+            System.out.println("Phone number '" + phoneNumber + "' is correct");
 
-        while (matcher.find()) {
-            counter++;
-            System.out.println("Matcher found '" +
-                    string.substring(matcher.start(), matcher.end()) +
-                    "'. Starting at index " + matcher.start() +
-                    " and ending at index " + matcher.end());
-        }
-
-        System.out.println("Matcher found:" + counter);
-
+       } else {
+           System.out.println("Phone number '" + phoneNumber + "' is incorrect");
+       }
+       
 //        SVERHZHADNAYA
 
 //        int counter = 0;
