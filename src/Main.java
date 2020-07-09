@@ -5,12 +5,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        SVERHZHADNAYA
+//        POSIX
 
         int counter = 0;
+        String string = "abcd1234";
 
-        String string = "196.198.1.197";
-        Pattern pattern = Pattern.compile(".*+19");
+        Pattern pattern = Pattern.compile("\\p{Punct}");
         Matcher matcher = pattern.matcher(string);
 
         while (matcher.find()) {
@@ -22,6 +22,24 @@ public class Main {
         }
 
         System.out.println("Matcher found:" + counter);
+
+//        SVERHZHADNAYA
+
+//        int counter = 0;
+//
+//        String string = "196.198.1.197";
+//        Pattern pattern = Pattern.compile(".*+19");
+//        Matcher matcher = pattern.matcher(string);
+//
+//        while (matcher.find()) {
+//            counter++;
+//            System.out.println("Matcher found '" +
+//                    string.substring(matcher.start(), matcher.end()) +
+//                    "'. Starting at index " + matcher.start() +
+//                    " and ending at index " + matcher.end());
+//        }
+//
+//        System.out.println("Matcher found:" + counter);
 
 //        ZHADNAYA:
 
