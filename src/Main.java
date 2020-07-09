@@ -5,9 +5,12 @@ public class Main {
 
     public static void main(String[] args) {
 
+//        ZHADNAYA:
+
         int counter = 0;
         String string = "196.198.1.197";
-        Pattern pattern = Pattern.compile(".*?19");
+
+        Pattern pattern = Pattern.compile(".*19");
         Matcher matcher = pattern.matcher(string);
 
         while (matcher.find()) {
@@ -19,6 +22,22 @@ public class Main {
         }
 
         System.out.println("Matcher found:" + counter);
+
+//        LAZY
+//        int counter = 0;
+//        String string = "196.198.1.197";
+//        Pattern pattern = Pattern.compile(".*?19");
+//        Matcher matcher = pattern.matcher(string);
+//
+//        while (matcher.find()) {
+//            counter++;
+//            System.out.println("Matcher found '" +
+//                    string.substring(matcher.start(), matcher.end()) +
+//                    "'. Starting at index " + matcher.start() +
+//                    " and ending at index " + matcher.end());
+//        }
+//
+//        System.out.println("Matcher found:" + counter);
 
 //        Pattern pattern = Pattern.compile();
 //
